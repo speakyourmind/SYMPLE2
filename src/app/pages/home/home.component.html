@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>SYMPLE</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ng-container>
+      <ion-row style="width:100%;">
+        <ion-col *ngFor="let cell of getCells(); let i = index">
+          <app-cell [color]="cell.backgroundColor" [label]="cell.displayText"></app-cell>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+  </ion-grid>
+
+</ion-content>
