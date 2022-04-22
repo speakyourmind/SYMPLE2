@@ -1,26 +1,27 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Observable} from 'rxjs';
 import {TextToSpeech} from '@capacitor-community/text-to-speech';
+import {Cell} from '../../models/cell.model';
 
 @Component({
   selector: 'app-cell',
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss'],
 })
-export class CellComponent implements OnInit {
-  @Input() cell: Observable<any>;
-  @Input() label: string;
-  @Input() color: string;
+export class CellComponent{
+  @Input() cell: Cell;
 
   constructor() {
   }
 
-  ngOnInit() {
-
+  onClick() {
+    if (this.cell.speakable == null || this.cell.speakable) {
+      speak(this.cell.displayText);
+    }
   }
 
-  onClick() {
-    speak(this.label);
+  getRouterLink(): string {
+    return this.cell.route ? this.cell.route : null;
   }
 
   isIos() {

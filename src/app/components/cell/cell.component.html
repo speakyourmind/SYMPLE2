@@ -1,1 +1,4 @@
-<ion-button color="{{color}}" (click)="onClick()" expand="full">{{label}}</ion-button>
+<ion-button color="{{cell.backgroundColor}}"
+            (click)="onClick()"
+            expand="full"
+            [routerLink]= "getRouterLink()" >{{cell.displayText}}</ion-button>

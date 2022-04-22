@@ -1,13 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import {HomePageRoutingModule} from './home-routing.module';
 
-import { HomePage } from './home.component';
-import {CellComponentModule} from '../../components/cell/cell.module';
+import {HomePage} from './home.component';
+import {BoardComponentModule} from '../../components/board/board.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import {CellComponentModule} from '../../components/cell/cell.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    CellComponentModule
+    BoardComponentModule
   ],
   declarations: [HomePage]
 })

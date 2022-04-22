@@ -1,0 +1,15 @@
+<ion-grid>
+  <ng-container>
+    <!--    <ion-row *ngFor="let cellGroup of cellGroups">-->
+    <!--      <ion-col *ngFor="let cell of cellGroup">-->
+    <!--        <app-cell [cell] = cell></app-cell>-->
+    <!--      </ion-col>-->
+    <!--    </ion-row>-->
+
+    <ion-row style="width:100%;">
+      <ion-col size-lg="6" *ngFor="let cell of getCells(); let i = index">
+        <app-cell [cell]=cell></app-cell>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+</ion-grid>

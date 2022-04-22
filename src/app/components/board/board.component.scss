@@ -1,9 +1,7 @@
-ion-menu-button {
-  color: var(--ion-color-primary);
-}
 
 ion-grid{
   height: 100%;
   width: 100%;
   display: flex;
+  --ion-grid-column-padding: 10px;
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Home', url: 'home', icon: 'home' },
-   // { title: 'General', url: '/folder/Outbox', icon: 'settings' },
+    {title: 'Home', url: '/home/home', icon: 'home'},
+    {title: 'About', url: '/about', icon: 'information-circle'},
   ];
-  constructor() {}
+
+  constructor() {
+  }
 }

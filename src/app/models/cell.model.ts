@@ -1,6 +1,7 @@
 export interface Cell {
-  id: string;
+  key: string;
   backgroundColor: string;
   displayText: string;
   speakable?: boolean;
+  route?: string;
 }

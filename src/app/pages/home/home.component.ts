@@ -1,21 +1,20 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from '../../services/data.service';
-import {Cell} from '../../models/cell.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 
-export class HomePage{
-  cells: Cell[];
-  cellsArray: Array<any>;
+export class HomePage implements OnInit{
 
-  constructor(private data: DataService) {
+  public name: string;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.name = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
-  getCells(): Cell[] {
-    return this.data.getCells();
-  }
 }
