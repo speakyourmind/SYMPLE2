@@ -5,9 +5,10 @@ import {RouterModule} from '@angular/router';
 import {IonicModule} from '@ionic/angular';
 import {BoardComponent} from './board.component';
 import {CellComponentModule} from '../cell/cell.module';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule, CellComponentModule],
+  imports: [CommonModule, FormsModule, IonicModule, RouterModule, CellComponentModule, MatButtonModule],
   declarations: [BoardComponent],
   exports: [BoardComponent]
 })

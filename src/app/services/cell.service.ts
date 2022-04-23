@@ -11,62 +11,62 @@ export class CellService {
   public cells: Cell[] = [
     {
       key: 'home',
-      backgroundColor: 'success',
+      backgroundColor: 'blue',
       displayText: 'HOME',
       route: '/home/home',
       speakable: false,
     },
     {
       key: 'yes-no',
-      backgroundColor: 'success',
+      backgroundColor: 'green',
       displayText: 'YES/NO',
       route: '/home/yes-no',
       speakable: false,
     },
     {
       key: '4-button',
-      backgroundColor: 'danger',
+      backgroundColor: 'blue',
       displayText: '4-BUTTON',
       route: '/home/4-button',
       speakable: false,
     },
     {
       key: '6-button',
-      backgroundColor: 'primary',
+      backgroundColor: 'red',
       displayText: '6-BUTTON',
       route: '/home/6-button',
       speakable: false,
     },
     {
       key: '8-button',
-      backgroundColor: 'warning',
+      backgroundColor: 'orange',
       displayText: '8-BUTTON',
       route: '/home/8-button',
       speakable: false,
     },
     {
       key: 'yes',
-      backgroundColor: 'success',
+      backgroundColor: 'green',
       displayText: 'YES',
     },
     {
       key: 'no',
-      backgroundColor: 'danger',
+      backgroundColor: 'red',
       displayText: 'NO',
     },
     {
       key: 'maybe',
-      backgroundColor: 'warning',
+      backgroundColor: 'orange',
       displayText: 'MAYBE',
     },
     {
       key: 'stop',
-      backgroundColor: 'danger',
+      backgroundColor: 'red',
       displayText: 'STOP',
     },
     {
       key: 'sure',
-      backgroundColor: 'primary',
+      backgroundColor: 'blue',
       displayText: 'SURE',
     },
     {
@@ -76,12 +76,12 @@ export class CellService {
     },
     {
       key: 'hello',
-      backgroundColor: 'primary',
+      backgroundColor: 'green',
       displayText: 'HELLO',
     },
     {
       key: 'bye',
-      backgroundColor: 'warning',
+      backgroundColor: 'orange',
       displayText: 'BYE',
     },
   ];

@@ -12,26 +12,31 @@ export class BoardService {
     {
       key: 'home',
       difficulty: 1,
+      title: 'SYMPLE',
       cellArray: ['yes-no', '4-button', '6-button','8-button'],
     },
     {
       key: 'yes-no',
       difficulty: 1,
+      title: 'Yes/No Board',
       cellArray: ['yes', 'no'],
     },
     {
       key: '4-button',
       difficulty: 2,
+      title: '4 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop'],
     },
     {
       key: '6-button',
       difficulty: 2,
+      title: '6 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop','hello','bye'],
     },
     {
       key: '8-button',
       difficulty: 2,
+      title: '8 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop','sure','ok','hello','bye'],
     },
   ];

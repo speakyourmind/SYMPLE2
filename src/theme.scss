@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$sym-primary: mat.define-palette(mat.$indigo-palette, 900);
+$sym-accent: mat.define-palette(mat.$teal-palette, 900);
+$sym-warn: mat.define-palette(mat.$deep-orange-palette, 900);
+$sym-red: mat.define-palette(mat.$red-palette,900);
+$sym-green: mat.define-palette(mat.$green-palette,900);
+$sym-blue: mat.define-palette(mat.$blue-palette,900);
+
+
+$sym-theme: mat.define-light-theme((
+  color: (
+    primary: $sym-primary,
+    accent: $sym-accent,
+  )
+));
+
+// Emit theme-dependent styles for common features used across multiple components.
+@include mat.core-theme($sym-theme);
+
+// Emit styles for MatButton based on `$sym-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+@include mat.button-theme($sym-theme);
+
+.red{
+  background: mat.get-color-from-palette($sym-red, 'darker');
+  color: mat.get-color-from-palette($sym-red, 'darker-contrast');
+}
+
+.blue{
+  background: mat.get-color-from-palette($sym-blue, 'darker');
+  color: mat.get-color-from-palette($sym-blue, 'darker-contrast');
+}
+
+.green{
+  background: mat.get-color-from-palette($sym-green, 'darker');
+  color: mat.get-color-from-palette($sym-green, 'darker-contrast');
+}
+
+.orange{
+  background: mat.get-color-from-palette($sym-warn, 'darker');
+  color: mat.get-color-from-palette($sym-warn, 'darker-contrast');
+}
+
+.purple{
+  background: mat.get-color-from-palette($sym-primary, 'darker');
+  color: mat.get-color-from-palette($sym-primary, 'darker-contrast');
+}

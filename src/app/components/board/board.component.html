@@ -7,7 +7,7 @@
     <!--    </ion-row>-->
 
     <ion-row style="width:100%;">
-      <ion-col size-lg="6" *ngFor="let cell of getCells(); let i = index">
+      <ion-col size-xs="12" size-md="6" *ngFor="let cell of getCells(); let i = index">
         <app-cell [cell]=cell></app-cell>
       </ion-col>
     </ion-row>
