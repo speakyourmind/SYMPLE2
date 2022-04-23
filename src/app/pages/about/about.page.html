@@ -1,18 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>About</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/home/home" color="primary">Home</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-navbar title="About"></app-navbar>
 <ion-content>
   <ion-list>
   </ion-list>
   <ion-list>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>SpeakYourMind Foundation</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+          <a href="https://speakyourmindfoundation.org/" style="text-decoration: underline;">SpeakYourMind Foundation</a>, is a 501(c)(3) nonprofit organization spun out of the BrainGate Lab at Brown University and
+            Massachusetts General Hospital. </p>
+          <p>We create, distribute, and support assistive communication technologies for individuals who are unable to effectively
+            communicate due to neurological injury and disease.
+          </p>
+          <p>Our team works closely with our clients to build a solution that meets their needs from the ground up.</p>
+          <ul>
+            <li>Reliable and easy to use eye and head tracking,</li>
+            <li>Intelligent switch access</li>
+            <li>Adaptive motion-based input</li>
+            <li>Customizable communication apps</li>
+          </ul>
+          <p>… all using adapted off-the-shelf hardware.</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Contact Us</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          contact@speakyourmindfoundation.org
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
     <ion-item>
       <ion-card>
         <ion-card-header>
@@ -23,6 +46,16 @@
           been approved for use by the FDA; therefore, these systems shall not be used or depended on to provide medical
           treatment or to make any form of healthcare decisions. Other means of communication must be used for any
           medical related purpose.
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Version</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          v0.0.1
         </ion-card-content>
       </ion-card>
     </ion-item>

@@ -8,6 +8,7 @@ import {HomePageRoutingModule} from './home-routing.module';
 
 import {HomePage} from './home.component';
 import {BoardComponentModule} from '../../components/board/board.module';
+import {AboutPageModule} from '../about/about.module';
 
 @NgModule({
   imports: [
@@ -15,8 +16,10 @@ import {BoardComponentModule} from '../../components/board/board.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    BoardComponentModule
+    BoardComponentModule,
+    AboutPageModule,
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule {
+}
