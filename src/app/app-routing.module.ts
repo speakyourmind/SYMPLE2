@@ -9,16 +9,18 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    redirectTo: 'home/home',
+    redirectTo: '/home/home',
     pathMatch: 'full'
   },
   {
     path: 'home/:id',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule),
+    pathMatch: 'full'
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule)
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule),
+    pathMatch: 'full'
   },
 ];
 

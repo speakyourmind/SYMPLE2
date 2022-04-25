@@ -3,5 +3,6 @@ export interface Cell {
   backgroundColor: string;
   displayText: string;
   speakable?: boolean;
+  typeable?: boolean;
   route?: string;
 }

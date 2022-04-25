@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {BoardService} from '../../services/board.service';
 import {Board} from '../../models/board.model';
+import {TextToSpeech} from '@capacitor-community/text-to-speech';
 
 @Component({
   selector: 'app-home',
@@ -20,5 +21,16 @@ export class HomePage implements OnInit{
     this.name = this.activatedRoute.snapshot.paramMap.get('id');
     this.board = this.boardService.getBoardByKey(this.name);
   }
-
 }
+
+const getSupportedLanguages = async () => {
+  const languages = await TextToSpeech.getSupportedLanguages();
+};
+
+const getSupportedVoices = async () => {
+  const voices = await TextToSpeech.getSupportedVoices();
+};
+
+const isLanguageSupported = async (lang: string) => {
+  const isSupported = await TextToSpeech.isLanguageSupported({lang});
+};

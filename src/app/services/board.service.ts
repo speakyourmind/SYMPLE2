@@ -13,7 +13,7 @@ export class BoardService {
       key: 'home',
       difficulty: 1,
       title: 'SYMPLE',
-      cellArray: ['yes-no', '4-button', '6-button','8-button'],
+      cellArray: ['yes-no', 'core-4', 'core-6','core-8','core-36'],
     },
     {
       key: 'yes-no',
@@ -22,22 +22,28 @@ export class BoardService {
       cellArray: ['yes', 'no'],
     },
     {
-      key: '4-button',
+      key: 'core-4',
       difficulty: 2,
       title: '4 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop'],
     },
     {
-      key: '6-button',
+      key: 'core-6',
       difficulty: 2,
       title: '6 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop','hello','bye'],
     },
     {
-      key: '8-button',
+      key: 'core-8',
       difficulty: 2,
       title: '8 Button Board',
       cellArray: ['yes', 'no', 'maybe', 'stop','sure','ok','hello','bye'],
+    },
+    {
+      key: 'core-36',
+      difficulty: 5,
+      title: 'Core 36 Board',
+      cellArray: ['like', 'want', 'get', 'make', 'good', 'more', 'not', 'go', 'look', 'turn', 'help', 'different', 'I', 'he', 'open', 'do', 'put', 'same', 'you', 'she', 'that', 'up', 'all', 'some', 'it', 'here', 'in', 'on', 'can', 'finished', 'where', 'what', 'why', 'who', 'when'],
     },
   ];
 

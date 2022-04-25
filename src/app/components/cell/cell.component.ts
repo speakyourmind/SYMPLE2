@@ -46,14 +46,3 @@ const stop = async () => {
   await TextToSpeech.stop();
 };
 
-const getSupportedLanguages = async () => {
-  const languages = await TextToSpeech.getSupportedLanguages();
-};
-
-const getSupportedVoices = async () => {
-  const voices = await TextToSpeech.getSupportedVoices();
-};
-
-const isLanguageSupported = async (lang: string) => {
-  const isSupported = await TextToSpeech.isLanguageSupported({lang});
-};
