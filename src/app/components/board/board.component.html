@@ -7,24 +7,22 @@
     <!--    </ion-row>-->
 
     <ion-row style="width:100%;">
-
-      <ng-container *ngIf="cellsByBoard.length>=2 && cellsByBoard.length < 6;else second">
+      <ng-container *ngIf="cellsByBoard.length>=2 && cellsByBoard.length < 5;else second">
         <ion-col size-xs="12" size-md="6" *ngFor="let cell of cellsByBoard;">
-          <app-cell [cell]=cell></app-cell>
+          <app-cell [cell]=cell[0] fontVW="12vw"></app-cell>
         </ion-col>
       </ng-container>
-
       <ng-template #second>
-        <ng-container *ngIf="cellsByBoard.length >= 6 && cellsByBoard.length < 9;else third">
+        <ng-container *ngIf="cellsByBoard.length >= 5 && cellsByBoard.length < 9;else third">
           <ion-col size-xs="6" size-md="6" *ngFor="let cell of cellsByBoard;">
-            <app-cell [cell]=cell></app-cell>
+            <app-cell [cell]=cell[0] fontVW="8vw"></app-cell>
           </ion-col>
         </ng-container>
       </ng-template>
 
       <ng-template #third>
-        <ion-col size-xs="6" size-md="2" *ngFor="let cell of cellsByBoard;">
-          <app-cell [cell]=cell></app-cell>
+        <ion-col size-xs="4" size-md="2" *ngFor="let cell of cellsByBoard;">
+          <app-cell [cell]=cell[0] fontVW="3vw"></app-cell>
         </ion-col>
       </ng-template>
 

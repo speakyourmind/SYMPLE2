@@ -1,6 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Cell} from '../../models/cell.model';
 import {BoardService} from '../../services/board.service';
+import {Observable} from 'rxjs';
+import {AngularFireDatabase} from '@angular/fire/compat/database';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-board',
@@ -10,28 +14,21 @@ import {BoardService} from '../../services/board.service';
 export class BoardComponent implements OnInit {
   @Input() name: string;
 
-  cellsByBoard: Cell[];
-  cellGroups: Cell[][];
-  cellsPerRow = 2;
-  constructor(private boardService: BoardService) { }
+  cellsByBoard: Cell[][] = [];
+  cells$: Observable<Cell[]>;
+
+  constructor(private boardService: BoardService, db: AngularFireDatabase) {
+    this.cells$ = db.list<Cell>('cells').valueChanges();
+  }
 
   ngOnInit() {
-    this.cellsByBoard = this.boardService.getCellsByBoard(this.name);
-    this.cellGroups = this.getCellGroups();
+    this.getCellsByBoard(this.name);
   }
 
-  getCells(): Cell[] {
-    return this.boardService.getCellsByBoard(this.name);
-  }
-
-  getCellGroups(): Cell[][] {
-    const groupArray: Cell[][] = [];
-    let i = 0;
-    while (i < this.cellsByBoard.length) {
-      groupArray.push(this.cellsByBoard.slice(i, i + this.cellsPerRow));
-      i = i + this.cellsPerRow;
-    }
-    return groupArray;
+  private getCellsByBoard(name: string){
+    this.boardService.getBoardByKey(this.name).cellArray.forEach((cellKey) => {
+      this.cells$.pipe(map(items => items.filter(item => item.key === cellKey))).subscribe(cell => this.cellsByBoard.push(cell));
+    });
   }
 }
 

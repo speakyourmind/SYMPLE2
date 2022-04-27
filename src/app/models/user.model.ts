@@ -1,5 +1,6 @@
 export interface User {
   id: number;
-  name: string;
-  level: number;
+  name?: string;
+  level?: number;
+  loggedIn: boolean;
 }

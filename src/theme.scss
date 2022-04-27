@@ -3,9 +3,10 @@
 @include mat.core();
 
 $sym-primary: mat.define-palette(mat.$indigo-palette, 900);
-$sym-accent: mat.define-palette(mat.$teal-palette, 900);
+$sym-accent: mat.define-palette(mat.$blue-palette, 900);
 $sym-warn: mat.define-palette(mat.$deep-orange-palette, 900);
 $sym-red: mat.define-palette(mat.$red-palette,900);
+$sym-orange: mat.define-palette(mat.$deep-orange-palette, 900);
 $sym-green: mat.define-palette(mat.$green-palette,900);
 $sym-blue: mat.define-palette(mat.$blue-palette,900);
 
@@ -41,7 +42,7 @@ $sym-theme: mat.define-light-theme((
 }
 
 .orange{
-  background: mat.get-color-from-palette($sym-warn, 'darker');
+  background: mat.get-color-from-palette($sym-orange, 'darker');
   color: mat.get-color-from-palette($sym-warn, 'darker-contrast');
 }
 

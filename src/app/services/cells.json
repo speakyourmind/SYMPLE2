@@ -1,0 +1,144 @@
+{
+"Cells" : {
+	"like":{
+      "backgroundColor": "green",
+      "displayText": "LIKE",
+    },
+"want":{
+      "backgroundColor": "green",
+      "displayText": "WANT",
+    },
+"get":{
+      "backgroundColor": "green",
+      "displayText": "GET",
+    },
+"make":{
+      "backgroundColor": "green",
+      "displayText": "MAKE",
+    },
+"good":{
+      "backgroundColor": "green",
+      "displayText": "GOOD",
+    },
+"more":{
+      "backgroundColor": "green",
+      "displayText": "MORE",
+    },
+"not":{
+      "backgroundColor": "red",
+      "displayText": "NOT",
+    },
+"go":{
+      "backgroundColor": "green",
+      "displayText": "GO",
+    },
+"look":{
+      "backgroundColor": "green",
+      "displayText": "LOOK",
+    },
+"turn":{
+      "backgroundColor": "green",
+      "displayText": "TURN",
+    },
+"help":{
+      "backgroundColor": "green",
+      "displayText": "HELP",
+    },
+"different":{
+      "backgroundColor": "green",
+      "displayText": "DIFFERENT",
+    },
+"I":{
+      "backgroundColor": "purple",
+      "displayText": "I",
+    },
+"he":{
+      "backgroundColor": "purple",
+      "displayText": "HE",
+    },
+"open":{
+      "backgroundColor": "green",
+      "displayText": "OPEN",
+    },
+"do":{
+      "backgroundColor": "green",
+      "displayText": "DO",
+    },
+"put":{
+      "backgroundColor": "green",
+      "displayText": "PUT",
+    },
+"same":{
+      "backgroundColor": "green",
+      "displayText": "SAME",
+    },
+"you":{
+      "backgroundColor": "purple",
+      "displayText": "YOU",
+    },
+"she":{
+      "backgroundColor": "purple",
+      "displayText": "SHE",
+    },
+"that":{
+      "backgroundColor": "purple",
+      "displayText": "THAT",
+    },
+"up":{
+      "backgroundColor": "blue",
+      "displayText": "UP",
+    },
+"all":{
+      "backgroundColor": "green",
+      "displayText": "ALL",
+    },
+"some":{
+      "backgroundColor": "green",
+      "displayText": "SOME",
+    },
+"it":{
+      "backgroundColor": "purple",
+      "displayText": "IT",
+    },
+"here":{
+      "backgroundColor": "green",
+      "displayText": "HERE",
+    },
+"in":{
+      "backgroundColor": "blue",
+      "displayText": "IN",
+    },
+"on":{
+      "backgroundColor": "blue",
+      "displayText": "ON",
+    },
+"can":{
+      "backgroundColor": "green",
+      "displayText": "CAN",
+    },
+"finished":{
+      "backgroundColor": "red",
+      "displayText": "FINISHED",
+    },
+"where":{
+      "backgroundColor": "orange",
+      "displayText": "WHERE",
+    },
+"what":{
+      "backgroundColor": "orange",
+      "displayText": "WHAT",
+    },
+"why":{
+      "backgroundColor": "orange",
+      "displayText": "WHY",
+    },
+"who":{
+      "backgroundColor": "orange",
+      "displayText": "WHO",
+    },
+"when":{
+      "backgroundColor": "orange",
+      "displayText": "WHEN",
+    },
+	}
+}

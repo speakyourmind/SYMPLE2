@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AngularFireDatabase} from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent {
     {title: 'About', url: '/about', icon: 'information-circle'},
   ];
 
-  constructor() {
+  constructor(db: AngularFireDatabase) {
+    const listRef = db.list('cells');
+    console.log(listRef);
   }
 }

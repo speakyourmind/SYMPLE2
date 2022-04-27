@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Board} from '../models/board.model';
 import {Cell} from '../models/cell.model';
 import {CellService} from './cell.service';
+import {getDatabase, onValue, ref} from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class BoardService {
       key: 'home',
       difficulty: 1,
       title: 'SYMPLE',
-      cellArray: ['yes-no', 'core-4', 'core-6','core-8','core-36'],
+      cellArray: ['yes-no', 'core-4', 'core-6','core-8','core-8','core-36'],
     },
     {
       key: 'yes-no',
@@ -62,7 +63,6 @@ export class BoardService {
     this.getBoardByKey(name).cellArray.forEach((cellKey) => {
       boardCells.push(this.cellService.cells.find(i => i.key === cellKey));
     });
-
     return boardCells;
   }
 }

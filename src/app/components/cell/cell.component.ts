@@ -10,6 +10,7 @@ import {Cell} from '../../models/cell.model';
 })
 export class CellComponent{
   @Input() cell: Cell;
+  @Input() fontVW: string = '2vw';
 
   constructor() {
   }

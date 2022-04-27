@@ -4,5 +4,11 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title><h1>{{title}}</h1></ion-title>
+    <ion-buttons slot="end">
+<!--      <button mat-raised-button class="blue" [hidden]="isLoggedIn()"-->
+<!--              routerLink= "/login" >Sign In</button>-->
+      <button mat-raised-button class="blue" [hidden]="!isLoggedIn()"
+              (click)="logout()" >Log Out</button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
