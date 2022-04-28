@@ -3,5 +3,5 @@ export interface Board {
   difficulty: number;
   title: string;
   description?: string;
-  cellArray: string[];
+  cellArray: string;
 }

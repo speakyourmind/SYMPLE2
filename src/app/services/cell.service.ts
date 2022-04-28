@@ -7,10 +7,7 @@ import {Board} from '../models/board.model';
 })
 export class CellService {
 
-
   public cells: Cell[] = [];
-
-
   constructor() {
   }
 

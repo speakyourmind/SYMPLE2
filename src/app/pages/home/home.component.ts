@@ -15,11 +15,10 @@ export class HomePage implements OnInit{
   public name: string;
   public board: Board;
 
-  constructor(private activatedRoute: ActivatedRoute, private boardService: BoardService) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.name = this.activatedRoute.snapshot.paramMap.get('id');
-    this.board = this.boardService.getBoardByKey(this.name);
   }
 }
 
