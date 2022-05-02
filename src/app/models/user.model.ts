@@ -3,4 +3,6 @@ export interface User {
   name?: string;
   level?: number;
   loggedIn: boolean;
+  email?: string;
+  uuid?: string;
 }

@@ -1,11 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Cell} from '../../models/cell.model';
 import {BoardService} from '../../services/board.service';
 import {Observable} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
-import {AngularFirestore} from '@angular/fire/compat/firestore';
-import {map} from 'rxjs/operators';
-import {Board} from '../../models/board.model';
+import {getAuth, onAuthStateChanged} from '@angular/fire/auth';
 
 @Component({
   selector: 'app-board',
@@ -15,15 +13,22 @@ import {Board} from '../../models/board.model';
 export class BoardComponent implements OnInit {
   @Input() name: string;
 
-  cellsByBoard: Cell[] = [];
+  cellsByBoard: Observable<Cell>[] = [];
   db: AngularFireDatabase;
+  auth = getAuth();
+  uid = 'default';
 
   constructor(db: AngularFireDatabase, private boardService: BoardService) {
     this.db = db;
   }
 
   ngOnInit() {
-    this.cellsByBoard = this.boardService.getCellsByBoard(this.name);
+    onAuthStateChanged(this.auth, (user) => {
+      this.uid = (user) ? user.uid : null;
+  //    this.cellsByBoard = this.boardService.getCellsByBoard(this.name, this.uid);
+      this.cellsByBoard = this.boardService.getCellsByBoard(this.name, this.uid);
+    });
+
   }
 
 }

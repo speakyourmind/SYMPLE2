@@ -2,23 +2,36 @@ import {Component, OnInit, Input} from '@angular/core';
 import {Observable} from 'rxjs';
 import {TextToSpeech} from '@capacitor-community/text-to-speech';
 import {Cell} from '../../models/cell.model';
+import {AngularFireDatabase} from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-cell',
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss'],
 })
-export class CellComponent{
-  @Input() cell: Cell;
+export class CellComponent implements OnInit{
+  @Input() cellObservable: Observable<Cell>;
   @Input() fontVW = '2vw';
+  cell: Cell;
+  db: AngularFireDatabase;
 
-  constructor() {
+  constructor(db: AngularFireDatabase) {
+    this.db = db;
+  }
+
+  ngOnInit() {
+    this.cellObservable.subscribe((cell) => {this.cell = cell;});
   }
 
   onClick() {
     if (this.cell.speakable == null || this.cell.speakable) {
-      speak(this.cell.displayText);
+      speak(this.cell.displayText.toLowerCase());
     }
+    //
+    // const itemsRef = this.db.database.ref('default_cells/'+this.cell.key);
+    // itemsRef.update({backgroundColor:'green'});
+    //itemsRef.update({displayText:'YES'});
+
   }
 
   getRouterLink(): string {

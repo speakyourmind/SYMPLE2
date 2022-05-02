@@ -4,6 +4,8 @@ import {Cell} from '../models/cell.model';
 import {CellService} from './cell.service';
 import {getDatabase, onValue, ref} from '@angular/fire/database';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +15,17 @@ export class BoardService {
   db: AngularFireDatabase;
   board: Board;
 
-  constructor(private cellService: CellService, db: AngularFireDatabase) {
+  constructor(private cellService: CellService, db: AngularFireDatabase, public afAuth: AngularFireAuth) {
     this.db = db;
   }
 
-  getCellsByBoard(name: string): Cell[] {
-    const cellsByBoard: Cell[] = [];
-    this.db.object<Board>('boards/' + name).valueChanges().subscribe((value) => {
+  getCellsByBoard(name: string, uid: string): Observable<Cell>[] {
+    const cellsByBoard: Observable<Cell>[] = [];
+    this.db.object<Board>(uid+'_boards/' + name).valueChanges().subscribe((value) => {
       this.board = value;
       const cells = this.board.cellArray.split(',', 100);
       for (const cellKey of cells) {
-        this.db.object<Cell>('cells/' + cellKey).valueChanges().subscribe(cell => cellsByBoard.push(cell));
+        cellsByBoard.push(this.db.object<Cell>(uid+'_cells/' + cellKey).valueChanges());
       }
     });
     return cellsByBoard;

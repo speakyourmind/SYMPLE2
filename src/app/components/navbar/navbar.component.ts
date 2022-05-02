@@ -20,15 +20,4 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  isLoggedIn(): boolean {
-    return this.userService.isLoggedIn();
-  }
-
-
-  async logout() {
-    await this.authService.logout();
-    console.log('Logged out');
-    await this.router.navigateByUrl('/login', { replaceUrl: true });
-
-  }
 }

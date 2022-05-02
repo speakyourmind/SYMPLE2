@@ -10,12 +10,13 @@ import {TextToSpeech} from '@capacitor-community/text-to-speech';
   styleUrls: ['./home.page.scss'],
 })
 
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
 
   public name: string;
   public board: Board;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.name = this.activatedRoute.snapshot.paramMap.get('id');
