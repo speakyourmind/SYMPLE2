@@ -1,144 +1,144 @@
 {
-"Cells" : {
+"cells" : {
 	"like":{
       "backgroundColor": "green",
-      "displayText": "LIKE",
+      "displayText": "LIKE"
     },
 "want":{
       "backgroundColor": "green",
-      "displayText": "WANT",
+      "displayText": "WANT"
     },
 "get":{
       "backgroundColor": "green",
-      "displayText": "GET",
+      "displayText": "GET"
     },
 "make":{
       "backgroundColor": "green",
-      "displayText": "MAKE",
+      "displayText": "MAKE"
     },
 "good":{
       "backgroundColor": "green",
-      "displayText": "GOOD",
+      "displayText": "GOOD"
     },
 "more":{
       "backgroundColor": "green",
-      "displayText": "MORE",
+      "displayText": "MORE"
     },
 "not":{
       "backgroundColor": "red",
-      "displayText": "NOT",
+      "displayText": "NOT"
     },
 "go":{
       "backgroundColor": "green",
-      "displayText": "GO",
+      "displayText": "GO"
     },
 "look":{
       "backgroundColor": "green",
-      "displayText": "LOOK",
+      "displayText": "LOOK"
     },
 "turn":{
       "backgroundColor": "green",
-      "displayText": "TURN",
+      "displayText": "TURN"
     },
 "help":{
       "backgroundColor": "green",
-      "displayText": "HELP",
+      "displayText": "HELP"
     },
 "different":{
       "backgroundColor": "green",
-      "displayText": "DIFFERENT",
+      "displayText": "DIFFERENT"
     },
 "I":{
       "backgroundColor": "purple",
-      "displayText": "I",
+      "displayText": "I"
     },
 "he":{
       "backgroundColor": "purple",
-      "displayText": "HE",
+      "displayText": "HE"
     },
 "open":{
       "backgroundColor": "green",
-      "displayText": "OPEN",
+      "displayText": "OPEN"
     },
 "do":{
       "backgroundColor": "green",
-      "displayText": "DO",
+      "displayText": "DO"
     },
 "put":{
       "backgroundColor": "green",
-      "displayText": "PUT",
+      "displayText": "PUT"
     },
 "same":{
       "backgroundColor": "green",
-      "displayText": "SAME",
+      "displayText": "SAME"
     },
 "you":{
       "backgroundColor": "purple",
-      "displayText": "YOU",
+      "displayText": "YOU"
     },
 "she":{
       "backgroundColor": "purple",
-      "displayText": "SHE",
+      "displayText": "SHE"
     },
 "that":{
       "backgroundColor": "purple",
-      "displayText": "THAT",
+      "displayText": "THAT"
     },
 "up":{
       "backgroundColor": "blue",
-      "displayText": "UP",
+      "displayText": "UP"
     },
 "all":{
       "backgroundColor": "green",
-      "displayText": "ALL",
+      "displayText": "ALL"
     },
 "some":{
       "backgroundColor": "green",
-      "displayText": "SOME",
+      "displayText": "SOME"
     },
 "it":{
       "backgroundColor": "purple",
-      "displayText": "IT",
+      "displayText": "IT"
     },
 "here":{
       "backgroundColor": "green",
-      "displayText": "HERE",
+      "displayText": "HERE"
     },
 "in":{
       "backgroundColor": "blue",
-      "displayText": "IN",
+      "displayText": "IN"
     },
 "on":{
       "backgroundColor": "blue",
-      "displayText": "ON",
+      "displayText": "ON"
     },
 "can":{
       "backgroundColor": "green",
-      "displayText": "CAN",
+      "displayText": "CAN"
     },
 "finished":{
       "backgroundColor": "red",
-      "displayText": "FINISHED",
+      "displayText": "FINISHED"
     },
 "where":{
       "backgroundColor": "orange",
-      "displayText": "WHERE",
+      "displayText": "WHERE"
     },
 "what":{
       "backgroundColor": "orange",
-      "displayText": "WHAT",
+      "displayText": "WHAT"
     },
 "why":{
       "backgroundColor": "orange",
-      "displayText": "WHY",
+      "displayText": "WHY"
     },
 "who":{
       "backgroundColor": "orange",
-      "displayText": "WHO",
+      "displayText": "WHO"
     },
 "when":{
       "backgroundColor": "orange",
-      "displayText": "WHEN",
-    },
+      "displayText": "WHEN"
+    }
 	}
 }
