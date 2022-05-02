@@ -3,15 +3,11 @@ button {
   height: 100%;
   display: flex;
   vertical-align:middle;
-  padding: 0;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  /* 100 = viewport width, as 1vw = 1/100th of that
-     So if the container is 50% of viewport (as here)
-     then factor that into how you want it to size.
-     Let's say you like 5vw if it were the whole width,
-     then for this container, size it at 2.5vw (5 * .5 [i.e. 50%])
-  */
 }
 
+*:focus {
+  outline: 10px solid #000000;
+}
