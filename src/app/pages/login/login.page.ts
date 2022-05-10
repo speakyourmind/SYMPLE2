@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
+import {BoardService} from '../../services/board.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private alertController: AlertController,
     private authService: AuthService,
+    private boardService: BoardService,
     private router: Router
   ) {}
 
@@ -37,17 +39,22 @@ export class LoginPage implements OnInit {
   }
 
   async register() {
-    const loading = await this.loadingController.create();
-    await loading.present();
+    this.router.navigateByUrl('/sign-up', { replaceUrl: true });
 
-    const user = await this.authService.register(this.credentials.value);
-    await loading.dismiss();
-
-    if (user) {
-      this.router.navigateByUrl('/home/home', { replaceUrl: true });
-    } else {
-      this.showAlert('Registration failed', 'Please try again!');
-    }
+    //
+    //
+    //
+    // const loading = await this.loadingController.create();
+    // await loading.present();
+    //
+    // const user = await this.authService.register(this.credentials.value);
+    // await loading.dismiss();
+    //
+    // if (user) {
+    //   this.router.navigateByUrl('/home/home', { replaceUrl: true });
+    // } else {
+    //   this.showAlert('Registration failed', 'Please try again!');
+    // }
   }
 
   async login() {
@@ -59,6 +66,7 @@ export class LoginPage implements OnInit {
 
     if (user) {
       await this.router.navigateByUrl('/home', { replaceUrl: true });
+      this.boardService.edit=false;
     } else {
       await this.showAlert('Login failed', 'Please try again!');
     }
@@ -66,7 +74,7 @@ export class LoginPage implements OnInit {
 
   async logout(){
     await this.authService.logout();
-    this.router.navigateByUrl('/home', { replaceUrl: true });
+    await this.router.navigateByUrl('/home', {replaceUrl: true});
   }
 
   async showAlert(header, message) {

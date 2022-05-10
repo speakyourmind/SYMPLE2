@@ -10,7 +10,6 @@ $sym-orange: mat.define-palette(mat.$deep-orange-palette, 900);
 $sym-green: mat.define-palette(mat.$green-palette,900);
 $sym-blue: mat.define-palette(mat.$blue-palette,900);
 
-
 $sym-theme: mat.define-light-theme((
   color: (
     primary: $sym-primary,
@@ -27,26 +26,27 @@ $sym-theme: mat.define-light-theme((
 @include mat.button-theme($sym-theme);
 
 .red{
-  background: mat.get-color-from-palette($sym-red, 'darker');
-  color: mat.get-color-from-palette($sym-red, 'darker-contrast');
+  background: mat.get-color-from-palette($sym-red, 'darker')!important;
+  color: mat.get-color-from-palette($sym-red, 'darker-contrast')!important;
 }
 
 .blue{
-  background: mat.get-color-from-palette($sym-blue, 'darker');
-  color: mat.get-color-from-palette($sym-blue, 'darker-contrast');
+  background: mat.get-color-from-palette($sym-blue, 'darker')!important;
+  color: mat.get-color-from-palette($sym-blue, 'darker-contrast')!important;
 }
 
 .green{
-  background: mat.get-color-from-palette($sym-green, 'darker');
-  color: mat.get-color-from-palette($sym-green, 'darker-contrast');
+  background: mat.get-color-from-palette($sym-green, 'darker')!important;
+  color: mat.get-color-from-palette($sym-green, 'darker-contrast')!important;
 }
 
 .orange{
-  background: mat.get-color-from-palette($sym-orange, 'darker');
-  color: mat.get-color-from-palette($sym-warn, 'darker-contrast');
+  background: mat.get-color-from-palette($sym-orange, 'darker')!important;
+  color: mat.get-color-from-palette($sym-warn, 'darker-contrast')!important;
 }
 
 .purple{
-  background: mat.get-color-from-palette($sym-primary, 'darker');
-  color: mat.get-color-from-palette($sym-primary, 'darker-contrast');
+  background: mat.get-color-from-palette($sym-primary, 'darker')!important;
+  color: mat.get-color-from-palette($sym-primary, 'darker-contrast')!important;
 }
+

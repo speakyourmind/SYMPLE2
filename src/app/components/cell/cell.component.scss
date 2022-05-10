@@ -2,12 +2,35 @@ button {
   width: 100%;
   height: 100%;
   display: flex;
+  font-size: 100px;
   vertical-align:middle;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
 }
 
-*:focus {
-  outline: 10px solid #000000;
+button:focus {
+  outline: 5px solid black;
+  outline-offset: 2.5px;
+}
+
+.edit {
+  width:48px;
+  height: 48px;
+  display: block;
+  position:absolute;
+  top:6pt;
+  right:6pt;
+  background-color: white;
+  outline:2.5px;
+}
+
+.black-icon{
+  color: black;
+  width:48px;
+  height: 48px;
+}
+
+.edit:focus {
+  outline: 2.5px solid black;
+  outline-offset: 2.5px;
 }

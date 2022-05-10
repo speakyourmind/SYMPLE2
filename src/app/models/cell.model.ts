@@ -4,5 +4,6 @@ export interface Cell {
   displayText: string;
   speakable?: boolean;
   typeable?: boolean;
+  selectable?: boolean;
   route?: string;
 }

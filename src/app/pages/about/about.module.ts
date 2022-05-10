@@ -8,15 +8,17 @@ import { AboutPageRoutingModule } from './about-routing.module';
 
 import { AboutPage } from './about.page';
 import {NavbarComponent} from '../../components/navbar/navbar.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    AboutPageRoutingModule,
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        AboutPageRoutingModule,
+        MatIconModule,
 
-  ],
+    ],
   exports: [
     NavbarComponent
   ],

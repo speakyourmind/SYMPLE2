@@ -5,13 +5,13 @@
     <!--        <app-cell [cell] = cell></app-cell>-->
     <!--      </ion-col>-->
     <!--    </ion-row>-->
-    <ion-row style="width:100%;">
+    <ion-row>
       <ng-container *ngIf="cellsByBoard.length>=2 && cellsByBoard.length < 5;else second">
-
         <ion-col size-xs="12" size-md="6" *ngFor="let cell of cellsByBoard;">
           <app-cell [cellObservable]=cell fontVW="10vw"></app-cell>
         </ion-col>
       </ng-container>
+
       <ng-template #second>
         <ng-container *ngIf="cellsByBoard.length >= 5 && cellsByBoard.length < 9;else third">
           <ion-col size-xs="6" size-md="6" *ngFor="let cell of cellsByBoard;">

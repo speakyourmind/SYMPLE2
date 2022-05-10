@@ -4,9 +4,13 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title><h1>{{title}}</h1></ion-title>
-    <ion-buttons slot="end">
-<!--      <button mat-raised-button class="blue" [hidden]="isLoggedIn()"-->
-<!--              routerLink= "/login" >Sign In</button>-->
+    <ion-buttons *ngIf="editable" slot="end">
+      <ion-button fill="outline" [hidden]="isInEdit()"  (click)="toggleEdit()">
+        EDIT
+      </ion-button>
+      <ion-button fill="outline" [hidden]="!isInEdit()"  (click)="toggleEdit()">
+        DONE
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

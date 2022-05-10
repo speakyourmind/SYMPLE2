@@ -1,5 +1,17 @@
-<button mat-raised-button style="font-size:100px; font-size:{{fontVW}}" class="{{cell.backgroundColor}}"
+
+<button id="cellButton_{{cell?.key}}" mat-raised-button
+        style="font-size:{{fontVW}};"
+        class="{{cell?.backgroundColor}}"
         (click)="onClick()"
+        [disabled]="inEdit()"
+        (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()"
         [routerLink]="getRouterLink()">
-  {{cell.displayText}}
+  {{cell?.displayText}}
+</button>
+
+<button mat-fab class="edit"
+        [hidden]="!inEdit()"
+        routerLink="/home/{{cell?.key}}/edit">
+  <mat-icon class="black-icon">create</mat-icon>
 </button>

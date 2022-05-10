@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.name = this.activatedRoute.snapshot.paramMap.get('id');
+    this.name = this.activatedRoute.snapshot.paramMap.get('boardid');
   }
 }
 

@@ -5,4 +5,5 @@ export interface User {
   loggedIn: boolean;
   email?: string;
   uuid?: string;
+
 }

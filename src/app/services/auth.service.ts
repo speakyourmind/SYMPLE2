@@ -15,6 +15,7 @@ import {Board} from '../models/board.model';
 })
 export class AuthService {
   db: AngularFireDatabase;
+  uid: string;
   defaultBoardData;
   public defaultCells: Cell[] = [
     {
@@ -323,12 +324,14 @@ export class AuthService {
   async register({email, password}) {
     try {
       const userAuth = await createUserWithEmailAndPassword(this.auth, email, password);
+      this.uid= userAuth.user.uid;
       this.defaultCells.forEach((defaultCell) => {
         const cells = this.db.database.ref().child(userAuth.user.uid + '_cells');
         cells.child(defaultCell.key).set({
           key: defaultCell.key,
           backgroundColor: defaultCell.backgroundColor,
-          displayText: defaultCell.displayText
+          displayText: defaultCell.displayText,
+          route: defaultCell.route!=null ? defaultCell.route: ''
         });
       });
       const boards = this.db.database.ref().child(userAuth.user.uid + '_boards');
@@ -350,6 +353,7 @@ export class AuthService {
   async login({email, password}) {
     try {
       const user = await signInWithEmailAndPassword(this.auth, email, password);
+      this.uid= user.user.uid;
       this.userService.setLoggedIn(true);
 
       return user;

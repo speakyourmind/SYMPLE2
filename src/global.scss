@@ -26,3 +26,44 @@
 @import "~@ionic/angular/css/flex-utils.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "theme.scss";
+
+// FORMS
+
+.form-label{
+  font-size:1rem;
+  padding-bottom: 1rem;
+}
+
+.form-input {
+  font-weight:bold;
+  font-size:1.5rem;
+  letter-spacing: .08em;
+}
+
+.form-button{
+  margin: 10px;
+  --border-radius:0;
+  min-width:90px;
+  min-height:40px;
+  margin:20px 10px 10px 10px;
+}
+
+
+// LOGIN
+
+.login-card{
+  top: 10%;
+  border: 5px solid black;
+  border-radius:0;
+  box-shadow: none;
+}
+
+.login-heading{
+  text-align:center;
+  padding-top:5%;
+  padding-bottom:5%;
+  font-size: 2.25rem;
+  margin-bottom: 0;
+  font-weight: bold;
+  color:black;
+}

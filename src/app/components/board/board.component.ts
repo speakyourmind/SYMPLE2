@@ -16,7 +16,7 @@ export class BoardComponent implements OnInit {
   cellsByBoard: Observable<Cell>[] = [];
   db: AngularFireDatabase;
   auth = getAuth();
-  uid = 'default';
+  uid: string;
 
   constructor(db: AngularFireDatabase, private boardService: BoardService) {
     this.db = db;
@@ -25,10 +25,8 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
     onAuthStateChanged(this.auth, (user) => {
       this.uid = (user) ? user.uid : null;
-  //    this.cellsByBoard = this.boardService.getCellsByBoard(this.name, this.uid);
       this.cellsByBoard = this.boardService.getCellsByBoard(this.name, this.uid);
     });
-
   }
 
 }
