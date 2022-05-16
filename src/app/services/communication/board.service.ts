@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Board} from '../models/board.model';
-import {Cell} from '../models/cell.model';
+import {Board} from '../../models/board.model';
+import {Cell} from '../../models/cell.model';
 import {CellService} from './cell.service';
 import {getDatabase, onValue, ref} from '@angular/fire/database';
 import {AngularFireDatabase} from '@angular/fire/compat/database';

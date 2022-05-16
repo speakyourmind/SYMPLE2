@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {BoardService} from '../../services/board.service';
 import {Board} from '../../models/board.model';
 import {TextToSpeech} from '@capacitor-community/text-to-speech';
 

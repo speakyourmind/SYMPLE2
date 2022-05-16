@@ -39,12 +39,18 @@ const routes: Routes = [
   {
     path: 'cell-edit',
     loadChildren: () => import('./pages/cell-edit/cell-edit.module').then(m => m.CellEditPageModule)
-  },  {
+  },
+  {
     path: 'sign-up',
     loadChildren: () => import('./pages/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
-
-
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 ];
 

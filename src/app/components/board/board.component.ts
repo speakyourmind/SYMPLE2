@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Cell} from '../../models/cell.model';
-import {BoardService} from '../../services/board.service';
+import {BoardService} from '../../services/communication/board.service';
 import {Observable} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
 import {getAuth, onAuthStateChanged} from '@angular/fire/auth';

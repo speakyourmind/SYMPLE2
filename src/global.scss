@@ -30,8 +30,9 @@
 // FORMS
 
 .form-label{
-  font-size:1rem;
+  font-size:1.25rem;
   padding-bottom: 1rem;
+  color: black;
 }
 
 .form-input {
@@ -43,9 +44,8 @@
 .form-button{
   margin: 10px;
   --border-radius:0;
-  min-width:90px;
-  min-height:40px;
-  margin:20px 10px 10px 10px;
+  min-height:50px;
+  margin:40px 10px 10px 10px;
 }
 
 

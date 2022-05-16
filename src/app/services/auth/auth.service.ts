@@ -7,8 +7,9 @@ import {
 } from '@angular/fire/auth';
 import {UserService} from './user.service';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
-import {Cell} from '../models/cell.model';
-import {Board} from '../models/board.model';
+import {Cell} from '../../models/cell.model';
+import {Board} from '../../models/board.model';
+import {Interaction} from '../../models/interaction.model';
 
 @Injectable({
   providedIn: 'root',
@@ -316,6 +317,12 @@ export class AuthService {
     },
   ];
 
+  public defaultSettings: Interaction[] = [
+    {
+      selectionType: 'click',
+    },
+  ];
+
 
   constructor(db: AngularFireDatabase, private auth: Auth, private userService: UserService) {
     this.db = db;
@@ -324,17 +331,17 @@ export class AuthService {
   async register({email, password}) {
     try {
       const userAuth = await createUserWithEmailAndPassword(this.auth, email, password);
-      this.uid= userAuth.user.uid;
+      this.uid = userAuth.user.uid;
       this.defaultCells.forEach((defaultCell) => {
         const cells = this.db.database.ref().child(userAuth.user.uid + '_cells');
         cells.child(defaultCell.key).set({
           key: defaultCell.key,
           backgroundColor: defaultCell.backgroundColor,
           displayText: defaultCell.displayText,
-          route: defaultCell.route!=null ? defaultCell.route: ''
+          route: defaultCell.route != null ? defaultCell.route : ''
         });
       });
-      const boards = this.db.database.ref().child(userAuth.user.uid + '_boards');
+
       this.defaultBoards.forEach((defaultBoard) => {
         const cells = this.db.database.ref().child(userAuth.user.uid + '_boards');
         cells.child(defaultBoard.key).set({
@@ -342,6 +349,13 @@ export class AuthService {
           difficulty: defaultBoard.difficulty,
           title: defaultBoard.title,
           cellArray: defaultBoard.cellArray
+        });
+      });
+
+      this.defaultSettings.forEach((defaultSetting) => {
+        const setting = this.db.database.ref().child(userAuth.user.uid + '_settings');
+        setting.child('interaction').set({
+          key: defaultSetting.selectionType,
         });
       });
       return userAuth;
@@ -353,7 +367,7 @@ export class AuthService {
   async login({email, password}) {
     try {
       const user = await signInWithEmailAndPassword(this.auth, email, password);
-      this.uid= user.user.uid;
+      this.uid = user.user.uid;
       this.userService.setLoggedIn(true);
 
       return user;

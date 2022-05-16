@@ -1,0 +1,24 @@
+<app-navbar title="Settings" [cancelable]="true"></app-navbar>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-lg="4" size-md="6" size-sm="10">
+        <ion-card style="box-shadow: none;">
+          <ion-card-content>
+            <form style="padding: 10px;" (ngSubmit)="save()" [formGroup]="settings">
+              <ion-item>
+                <ion-label position="stacked" class="form-label">Selection Type</ion-label>
+                <ion-select interface="popover" formControlName="selectionType" class="form-input" [ngModel]="interaction?.selectionType">
+                  <ion-select-option class="form-input" value="click">Click</ion-select-option>
+                  <ion-select-option class="form-input" value="dwell">Dwell</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-button class="form-button" type="submit" expand="full" color="dark" [disabled]="!settings.valid">SAVE</ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

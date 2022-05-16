@@ -6,9 +6,10 @@ h1{
   letter-spacing: .05em;
 }
 
-ion-button{
+ion-button, ion-back-button{
   width:90px;
   height:40px;
   font-size:16px;
   margin-right:10pt;
+  outline: 2.5px solid black;
 }

@@ -1,0 +1,62 @@
+<ion-content style="display: grid; place-items: center;">
+  <ion-grid >
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-lg="4" size-md="6" size-xs="12">
+        <ion-card class="login-card">
+          <ion-card-content>
+            <h1 class="login-heading">Sign Up</h1>
+            <form style="padding: 2.5px;" (ngSubmit)="register()" [formGroup]="credentials">
+              <ion-item class="ion-margin-bottom">
+                <ion-label position="stacked" class="form-label">First Name</ion-label>
+                <ion-input type="text" class="form-input" formControlName="firstName"></ion-input>
+                <ion-note slot="error" *ngIf="(firstName.dirty || firstName.touched) && firstName.errors">First Name is invalid
+                </ion-note>
+              </ion-item>
+              <ion-item class="ion-margin-bottom">
+                <ion-label position="stacked" class="form-label">Last Name</ion-label>
+                <ion-input type="text" class="form-input" formControlName="lastName"></ion-input>
+                <ion-note slot="error" *ngIf="(lastName.dirty || lastName.touched) && lastName.errors">Last Name is invalid
+                </ion-note>
+              </ion-item>
+              <ion-item class="ion-margin-bottom">
+                <ion-label position="stacked" class="form-label">E-mail</ion-label>
+                <ion-input type="email" class="form-input" formControlName="email"></ion-input>
+                <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid
+                </ion-note>
+              </ion-item>
+              <ion-item class="ion-margin-bottom">
+                <ion-label position="stacked"  class="form-label">Password</ion-label>
+                <ion-input type="password" class="form-input" formControlName="password"></ion-input>
+                <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password needs to
+                  be 6 characters
+                </ion-note>
+              </ion-item>
+
+<!--              <ion-item class="ion-margin-bottom">-->
+<!--                <ion-checkbox slot="start" formControlName="privacyAcknowledge"></ion-checkbox>-->
+<!--                <ion-note class="form-label">Please acknowledge that you have reviewed and agree-->
+<!--                  to our <a href="https://speakyourmindfoundation.org/privacypolicy.html"-->
+<!--                            style="text-decoration: underline;">Privacy Policy</a></ion-note>-->
+<!--              </ion-item>-->
+
+<!--              <ion-item class="ion-margin-bottom">-->
+<!--                <ion-checkbox slot="start" formControlName="termsAcknowledge"></ion-checkbox>-->
+<!--                <ion-note class="form-label">Please acknowledge that you have reviewed and agree-->
+<!--                  to our <a href="https://speakyourmindfoundation.org/termsofservice.html"-->
+<!--                            style="text-decoration: underline;">Terms of Service</a></ion-note>-->
+<!--              </ion-item>-->
+
+              <ion-button class="form-button" type="submit" expand="block" color="dark" [disabled]="!credentials.valid">CREATE ACCOUNT
+              </ion-button>
+            </form>
+          </ion-card-content>
+          <ion-buttons slot="start">
+            <ion-back-button text="" icon="add"></ion-back-button>
+          </ion-buttons>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -4,13 +4,15 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title><h1>{{title}}</h1></ion-title>
-    <ion-buttons *ngIf="editable" slot="end">
-      <ion-button fill="outline" [hidden]="isInEdit()"  (click)="toggleEdit()">
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="editable" [hidden]="isInEdit()"  (click)="toggleEdit()">
         EDIT
       </ion-button>
-      <ion-button fill="outline" [hidden]="!isInEdit()"  (click)="toggleEdit()">
+      <ion-button *ngIf="editable" [hidden]="!isInEdit()"  (click)="toggleEdit()">
         DONE
       </ion-button>
+      <ion-back-button *ngIf="cancelable"  defaultHref="/" text="CANCEL" icon=""></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
