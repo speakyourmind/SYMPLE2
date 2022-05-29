@@ -9,6 +9,9 @@
       <ion-button *ngIf="editable" [hidden]="isInEdit()"  (click)="toggleEdit()">
         EDIT
       </ion-button>
+      <ion-button *ngIf="editable" [hidden]="!isInEdit()"  (click)="add()">
+        ADD
+      </ion-button>
       <ion-button *ngIf="editable" [hidden]="!isInEdit()"  (click)="toggleEdit()">
         DONE
       </ion-button>

@@ -42,7 +42,7 @@ export class SettingsPage implements OnInit {
 
   async save() {
     await this.interactionService.saveSelectionType(this.uid, this.selectionType?.value?.toString());
-   await this.router.navigateByUrl('/home/home');
+    await this.router.navigateByUrl('/home/home');
   }
 
 

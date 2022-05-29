@@ -23,12 +23,15 @@ export class BoardService {
 
   getCellsByBoard(name: string, uid: string): Observable<Cell>[] {
     const cellsByBoard: Observable<Cell>[] = [];
-    this.db.object<Board>(uid + '_boards/' + name).valueChanges().subscribe((value) => {
+    this.db.object<Board>('users/' + uid + '/boards/' + name).valueChanges().subscribe((value) => {
       this.board = value;
       if (this.board !== null && this.board.cellArray.length > 0) {
       const cells = this.board.cellArray.split(',', 100);
         for (const cellKey of cells) {
-          cellsByBoard.push(this.cellService.getCellByKey(uid, cellKey));
+          const cellByKey = this.cellService.getCellByKey(uid, cellKey);
+          if (cellByKey !== null){
+          cellsByBoard.push(cellByKey);
+          }
         }
       }
     });

@@ -16,18 +16,29 @@ export class CellService {
   }
 
   getCellByKey(uid: string, cellKey: string): Observable<Cell> {
-    return this.db.object<Cell>(uid + '_cells/' + cellKey).valueChanges();
+    return this.db.object<Cell>('users/' + uid + '/cells/' + cellKey).valueChanges();
   }
 
   async saveDisplayText(uid: string, key: string, value: string){
-    await this.db.database.ref(uid + '_cells/' + key).update({displayText: value});
+    await this.db.database.ref('users/' + uid + '/cells/' + key).update({displayText: value});
   }
 
   async saveBackgroundColor(uid: string, key: string, value: string){
-    await this.db.database.ref(uid + '_cells/' + key).update({backgroundColor: value});
+    await this.db.database.ref('users/' + uid + '/cells/' + key).update({backgroundColor: value});
   }
 
   async saveSpeakable(uid: string, key: string, value: boolean){
-    await this.db.database.ref(uid + '_cells/' + key).update({speakable: value});
+    await this.db.database.ref('users/' + uid + '/cells/' + key).update({speakable: value});
   }
+
+  async saveCell(uid: string, cell: Cell, boardID: string, currentArray: string){
+    await this.db.database.ref('users/' + uid + '/cells/' + cell.key).update(cell);
+    await this.db.database.ref('users/' + uid + '/boards/' + boardID).update({cellArray:currentArray.concat(','+ cell.key)});
+  }
+
+  async deleteCell(uid: string, cell: Cell, boardID: string, currentArray: string){
+    await this.db.database.ref('users/' + uid + '/cells/' + cell.key).remove();
+    await this.db.database.ref('users/' + uid + '/boards/' + boardID).update({cellArray:currentArray.replace(','+ cell.key,'')});
+  }
+
 }

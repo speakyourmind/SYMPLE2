@@ -332,8 +332,9 @@ export class AuthService {
     try {
       const userAuth = await createUserWithEmailAndPassword(this.auth, email, password);
       this.uid = userAuth.user.uid;
+
       this.defaultCells.forEach((defaultCell) => {
-        const cells = this.db.database.ref().child(userAuth.user.uid + '_cells');
+        const cells = this.db.database.ref().child('users/' + this.uid + '/cells');
         cells.child(defaultCell.key).set({
           key: defaultCell.key,
           backgroundColor: defaultCell.backgroundColor,
@@ -343,7 +344,7 @@ export class AuthService {
       });
 
       this.defaultBoards.forEach((defaultBoard) => {
-        const cells = this.db.database.ref().child(userAuth.user.uid + '_boards');
+        const cells = this.db.database.ref().child('users/' + this.uid + '/boards');
         cells.child(defaultBoard.key).set({
           key: defaultBoard.key,
           difficulty: defaultBoard.difficulty,
@@ -353,7 +354,7 @@ export class AuthService {
       });
 
       this.defaultSettings.forEach((defaultSetting) => {
-        const setting = this.db.database.ref().child(userAuth.user.uid + '_settings');
+        const setting = this.db.database.ref().child('users/' + this.uid + '/settings');
         setting.child('interaction').set({
           key: defaultSetting.selectionType,
         });

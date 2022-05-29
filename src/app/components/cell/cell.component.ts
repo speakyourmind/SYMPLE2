@@ -8,7 +8,7 @@ import {BoardService} from '../../services/communication/board.service';
 import {InteractionService} from '../../services/user/interaction.service';
 import {getAuth, onAuthStateChanged} from '@angular/fire/auth';
 import {Interaction} from '../../models/interaction.model';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-cell',
@@ -20,6 +20,7 @@ export class CellComponent implements OnInit {
   @Input() fontVW = '2vw';
   @ViewChild('cellButton') cellButton: any;
 
+  boardId: string;
   interactionObservable: Observable<Interaction>;
   interaction: Interaction;
   cell: Cell;
@@ -28,7 +29,8 @@ export class CellComponent implements OnInit {
   auth = getAuth();
   uid: string;
 
-  constructor(db: AngularFireDatabase,
+  constructor(private activatedRoute: ActivatedRoute,
+              db: AngularFireDatabase,
               private animationCtrl: AnimationController,
               private boardService: BoardService,
               private interactionService: InteractionService,
@@ -62,6 +64,7 @@ export class CellComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.boardId = this.activatedRoute.snapshot.paramMap.get('boardid');
     this.cellObservable.subscribe((cell) => {
       this.cell = cell;
     });
@@ -76,7 +79,9 @@ export class CellComponent implements OnInit {
   }
 
   onClick() {
-    this.execute();
+    if (this.interaction.selectionType === 'click') {
+      this.execute();
+    }
   }
 
   execute(){
@@ -91,11 +96,6 @@ export class CellComponent implements OnInit {
 
   inEdit(): boolean{
     return this.boardService.edit;
-  }
-
-  deleteCell(){
-    const itemsRef = this.db.database.ref('default_cells/yes');
-    itemsRef.remove().then();
   }
 
   getRouterLink(): string {

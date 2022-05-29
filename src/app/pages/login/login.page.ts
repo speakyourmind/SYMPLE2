@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
   }
 
   async register() {
-    this.router.navigateByUrl('/sign-up', { replaceUrl: true });
+    await this.router.navigateByUrl('/sign-up', {replaceUrl: true});
 
     //
     //

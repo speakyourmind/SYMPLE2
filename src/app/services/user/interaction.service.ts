@@ -15,18 +15,18 @@ export class InteractionService {
   }
 
   getInteraction(uid: string): Observable<Interaction> {
-    return this.db.object<Interaction>(uid + '_settings/interaction').valueChanges();
+    return this.db.object<Interaction>('users/' + uid + '/settings/interaction').valueChanges();
   }
 
-  async saveLevel(uid: string, value: number){
-    await this.db.database.ref(uid + '_settings/interaction').update({level: value});
+  async saveLevel(uid: string, value: number) {
+    await this.db.database.ref('users/' + uid + '/settings/interaction').update({level: value});
   }
 
-  async saveSelectionType(uid: string, value: string){
-    await this.db.database.ref(uid + '_settings/interaction').update({selectionType: value});
+  async saveSelectionType(uid: string, value: string) {
+    await this.db.database.ref('users/' + uid + '/settings/interaction').update({selectionType: value});
   }
 
-  async saveDwellTime(uid: string, value: number){
-    await this.db.database.ref(uid + '_settings/interaction').update({dwellTime: value});
+  async saveDwellTime(uid: string, value: number) {
+    await this.db.database.ref('users/' + uid + '/settings/interaction').update({dwellTime: value});
   }
 }

@@ -8,6 +8,7 @@ export class UserService {
 
   public user: User ={
     id : 0,
+    email:'',
     loggedIn: true
   };
 
@@ -21,5 +22,4 @@ export class UserService {
   public isLoggedIn(): boolean {
     return this.user.loggedIn;
   }
-
 }

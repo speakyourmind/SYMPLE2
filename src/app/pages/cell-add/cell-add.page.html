@@ -5,7 +5,7 @@
       <ion-col size-lg="4" size-md="6" size-sm="10">
         <ion-card style="box-shadow: none;">
           <ion-card-header>
-            <button id="cellButton_{{cell?.key}}_edit" mat-raised-button
+            <button id="cellButton_add" mat-raised-button
                     style="font-size:32px; min-height:180px;margin-left:auto; margin-right:auto;"
                     class="{{loadBackgroundColor()}}">
               {{displayText}}
@@ -15,14 +15,14 @@
             <form style="padding: 10px;" (ngSubmit)="save()" [formGroup]="settings">
               <ion-item>
                 <ion-label position="stacked" class="form-label">Display Text</ion-label>
-                <ion-input type="text" placeholder="Text" formControlName="displayText" class="form-input" [ngModel]="cell?.displayText"></ion-input>
-<!--                <ion-note slot="error" *ngIf="displayText.errors">-->
-<!--                  Text is invalid-->
-<!--                </ion-note>-->
+                <ion-input type="text" placeholder="Text" formControlName="displayText" class="form-input"></ion-input>
+                <!--                <ion-note slot="error" *ngIf="displayText.errors">-->
+                <!--                  Text is invalid-->
+                <!--                </ion-note>-->
               </ion-item>
               <ion-item>
                 <ion-label position="stacked" class="form-label">Background Color</ion-label>
-                <ion-select interface="popover" formControlName="backgroundColor" class="form-input" [ngModel]="cell?.backgroundColor">
+                <ion-select interface="popover" formControlName="backgroundColor" class="form-input" >
                   <ion-select-option class="form-input" value="green">Green</ion-select-option>
                   <ion-select-option class="form-input" value="blue">Blue</ion-select-option>
                   <ion-select-option class="form-input" value="red">Red</ion-select-option>
@@ -32,9 +32,8 @@
               </ion-item>
               <ion-item>
                 <ion-label  style="font-size:1.25rem; color: black">Speakable</ion-label>
-                <ion-toggle slot="end" color="dark" formControlName="speakable" checked="{{cell?.speakable}}"></ion-toggle>
+                <ion-toggle slot="end" color="dark" formControlName="speakable"></ion-toggle>
               </ion-item>
-              <ion-button class="form-button" color="danger" expand="full" (click)="delete()">DELETE</ion-button>
               <ion-button class="form-button" type="submit" color="dark" expand="full" [disabled]="!settings.valid">SAVE</ion-button>
 
             </form>

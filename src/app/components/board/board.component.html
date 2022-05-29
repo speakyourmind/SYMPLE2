@@ -1,10 +1,5 @@
 <ion-grid>
   <ng-container ngif="">
-    <!--    <ion-row *ngFor="let cellGroup of cellGroups">-->
-    <!--      <ion-col *ngFor="let cell of cellGroup">-->
-    <!--        <app-cell [cell] = cell></app-cell>-->
-    <!--      </ion-col>-->
-    <!--    </ion-row>-->
     <ion-row>
       <ng-container *ngIf="cellsByBoard.length>=2 && cellsByBoard.length < 5;else second">
         <ion-col size-xs="12" size-md="6" *ngFor="let cell of cellsByBoard;">

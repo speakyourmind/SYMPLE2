@@ -27,11 +27,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home/:cellid/edit',
-    loadChildren: () => import('./pages/cell-edit/cell-edit.module').then(m => m.CellEditPageModule),
-    pathMatch: 'full'
-  },
-  {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule),
     pathMatch: 'full'
@@ -47,9 +42,19 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
-  },  {
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'home/:boardid/add',
+    loadChildren: () => import('./pages/cell-add/cell-add.module').then( m => m.CellAddPageModule)
+  },
+  {
+    path: 'home/:boardid/:cellid/edit',
+    loadChildren: () => import('./pages/cell-edit/cell-edit.module').then(m => m.CellEditPageModule),
+    pathMatch: 'full'
   },
 
 ];
