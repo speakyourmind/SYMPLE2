@@ -277,7 +277,6 @@ export class AuthService {
     },
   ];
 
-
   public defaultBoards: Board[] = [
     {
       key: 'home',

@@ -62,6 +62,13 @@ export class CellEditPage implements OnInit {
     }
   }
 
+  get typeable() {
+    if(this.settings.get('typeable').value == null){
+      return this.cell?.typeable ? this.cell?.typeable : false;
+    } else {
+      return this.settings.get('typeable').value;
+    }
+  }
   loadBackgroundColor() {
     if (this.backgroundColor.value == null) {
       return this.cell?.backgroundColor;
@@ -74,12 +81,13 @@ export class CellEditPage implements OnInit {
     await this.cellService.saveDisplayText(this.uid, this.cell.key, this.displayText.toString());
     await this.cellService.saveBackgroundColor(this.uid, this.cell.key, this.backgroundColor.value.toString());
     await this.cellService.saveSpeakable(this.uid, this.cell.key, this.speakable);
+    await this.cellService.saveTypeable(this.uid, this.cell.key, this.typeable);
     this.location.back();
   }
 
   delete() {
     this.cellService.deleteCell(this.uid, this.cell, this.boardId, this.currentArray);
-    this.router.navigateByUrl('/home/home');
+    this.location.back();
   }
 
   ngOnInit() {
@@ -90,6 +98,7 @@ export class CellEditPage implements OnInit {
       displayText: [this.cell?.displayText],
       backgroundColor: [this.cell?.backgroundColor],
       speakable: [this.cell?.speakable],
+      typeable: [this.cell?.typeable],
     });
 
     onAuthStateChanged(this.auth, (user) => {

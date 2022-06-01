@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {Cell} from '../../models/cell.model';
 import {BoardService} from '../../services/communication/board.service';
 import {Observable} from 'rxjs';
@@ -12,6 +12,7 @@ import {getAuth, onAuthStateChanged} from '@angular/fire/auth';
 })
 export class BoardComponent implements OnInit {
   @Input() name: string;
+  // @ViewChild('keyboard') keyboardRef: ElementRef;
 
   cellsByBoard: Observable<Cell>[] = [];
   db: AngularFireDatabase;

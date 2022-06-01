@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/compat/database';
 import {AuthService} from '../../services/auth/auth.service';
@@ -18,7 +18,6 @@ import {Interaction} from '../../models/interaction.model';
 })
 export class SettingsPage implements OnInit {
 
-  interactionObservable: Observable<Interaction>;
   interaction: Interaction;
   settings: FormGroup;
   db: AngularFireDatabase;
@@ -37,14 +36,17 @@ export class SettingsPage implements OnInit {
   }
 
   get selectionType() {
-    return this.settings.get('selectionType');
+    if (this.settings.get('selectionType').value == null) {
+      return this.interaction.selectionType ? this.interaction.selectionType : false;
+    } else {
+      return this.settings.get('selectionType').value;
+    }
   }
 
   async save() {
-    await this.interactionService.saveSelectionType(this.uid, this.selectionType?.value?.toString());
+    await this.interactionService.saveSelectionType(this.uid, this.selectionType.value.toString());
     await this.router.navigateByUrl('/home/home');
   }
-
 
   ngOnInit() {
     this.settings = this.fb.group({
@@ -53,8 +55,7 @@ export class SettingsPage implements OnInit {
 
     onAuthStateChanged(this.auth, (user) => {
       this.uid = (user) ? user.uid : null;
-      this.interactionObservable = this.interactionService.getInteraction(this.uid);
-      this.interactionObservable.subscribe((interaction) => {
+      this.interactionService.getInteraction(this.uid).subscribe((interaction) => {
         this.interaction = interaction;
       });
     });

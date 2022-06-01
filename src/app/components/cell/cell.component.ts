@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, HostListener, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, HostListener, ViewChild, Output, EventEmitter} from '@angular/core';
 import {Observable} from 'rxjs';
 import {TextToSpeech} from '@capacitor-community/text-to-speech';
 import {Cell} from '../../models/cell.model';
@@ -18,6 +18,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class CellComponent implements OnInit {
   @Input() cellObservable: Observable<Cell>;
   @Input() fontVW = '2vw';
+  @Output() typeEvent = new EventEmitter<string>();
   @ViewChild('cellButton') cellButton: any;
 
   boardId: string;
@@ -91,11 +92,18 @@ export class CellComponent implements OnInit {
     if (this.cell?.route) {
       this.router.navigateByUrl(this.cell.route);
     }
+    if (this.cell.typeable){
+      this.typeEvent.emit(this.cell.displayText);
+    }
   }
 
 
   inEdit(): boolean{
     return this.boardService.edit;
+  }
+
+  onEdit(){
+    this.router.navigateByUrl('/home/'+this.boardId+'/'+ this.cell?.key+'/edit');
   }
 
   getRouterLink(): string {

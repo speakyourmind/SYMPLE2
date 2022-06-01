@@ -27,16 +27,19 @@
                   <ion-select-option class="form-input" value="blue">Blue</ion-select-option>
                   <ion-select-option class="form-input" value="red">Red</ion-select-option>
                   <ion-select-option class="form-input" value="purple">Purple</ion-select-option>
-                  <ion-select-option class="form-input" value="purple">Orange </ion-select-option>
+                  <ion-select-option class="form-input" value="orange">Orange </ion-select-option>
                 </ion-select>
               </ion-item>
               <ion-item>
                 <ion-label  style="font-size:1.25rem; color: black">Speakable</ion-label>
                 <ion-toggle slot="end" color="dark" formControlName="speakable" checked="{{cell?.speakable}}"></ion-toggle>
               </ion-item>
+              <ion-item>
+                <ion-label  style="font-size:1.25rem; color: black">Typeable</ion-label>
+                <ion-toggle slot="end" color="dark" formControlName="typeable" checked="{{cell?.typeable}}"></ion-toggle>
+              </ion-item>
               <ion-button class="form-button" color="danger" expand="full" (click)="delete()">DELETE</ion-button>
               <ion-button class="form-button" type="submit" color="dark" expand="full" [disabled]="!settings.valid">SAVE</ion-button>
-
             </form>
           </ion-card-content>
         </ion-card>

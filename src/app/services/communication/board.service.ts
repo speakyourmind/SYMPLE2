@@ -26,11 +26,11 @@ export class BoardService {
     this.db.object<Board>('users/' + uid + '/boards/' + name).valueChanges().subscribe((value) => {
       this.board = value;
       if (this.board !== null && this.board.cellArray.length > 0) {
-      const cells = this.board.cellArray.split(',', 100);
+        const cells = this.board.cellArray.split(',', 100);
         for (const cellKey of cells) {
           const cellByKey = this.cellService.getCellByKey(uid, cellKey);
-          if (cellByKey !== null){
-          cellsByBoard.push(cellByKey);
+          if (cellByKey !== null) {
+            cellsByBoard.push(cellByKey);
           }
         }
       }
